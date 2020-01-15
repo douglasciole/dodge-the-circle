@@ -25,4 +25,8 @@ public class RingInstantiateScript : MonoBehaviour
             instantiateFlag = false;
         }
     }
+
+    public void spawnRing() {
+        instantiateFlag = true;
+    }
 }
