@@ -346,7 +346,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ringSpeed: 0.5
   instantiateFlag: 0
-  ringPrefab: {fileID: 3051276550472628706, guid: 267aa927fdf8db44daea181d852d00ae,
+  camera: {fileID: 0}
+  level_0: 3
+  ringLevel_0_1: {fileID: 3067477712335798993, guid: 473aac4ec58327c439434c43b1ec648e,
+    type: 3}
+  ringLevel_0_2: {fileID: 6053633228680405083, guid: 7c8794ee3f32e1645b4f59690ed05f79,
+    type: 3}
+  ringLevel_0_3: {fileID: 2466931777396534927, guid: f2f9960a3cf758c44a099dca807cc071,
     type: 3}
 --- !u!1 &534181911
 GameObject:
