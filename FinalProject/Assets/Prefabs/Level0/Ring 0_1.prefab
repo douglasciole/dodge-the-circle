@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3067477712335798994}
   - component: {fileID: 3067477712335798995}
   m_Layer: 0
-  m_Name: Ring 0.1
+  m_Name: Ring 0_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,8 @@ MonoBehaviour:
   scaleSpeed: 0.5
   maxSize: 3
   initialScale: {x: 0.01, y: 0.01, z: 1}
-  gameManagerScript: {fileID: 0}
+  ringInstantiateScript: {fileID: 0}
+  gameManagerVariables: {fileID: 0}
 --- !u!1 &9186428748969886208
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,16 +698,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129054016998440320, guid: 5238a876362fe2c458a7eedf19034a12,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.100000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129054016998440320, guid: 5238a876362fe2c458a7eedf19034a12,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.100000024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5238a876362fe2c458a7eedf19034a12, type: 3}

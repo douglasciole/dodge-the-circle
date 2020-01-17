@@ -8,18 +8,22 @@ public class TimedScaleScript : MonoBehaviour
     public int maxSize;
 
     public Vector3 initialScale;
-    public RingInstantiateScript gameManagerScript;
+    public RingInstantiateScript ringInstantiateScript;
+    public GameManagerVariables gameManagerVariables;
     // Start is called before the first frame update
     void Start()
     {
         this.transform.localScale = initialScale;
-        gameManagerScript = GameObject.FindWithTag("Game Manager").GetComponent<RingInstantiateScript>();
+        ringInstantiateScript = GameObject.FindWithTag("Game Manager").GetComponent<RingInstantiateScript>();
+        gameManagerVariables = GameObject.FindWithTag("Game Manager").GetComponent<GameManagerVariables>();
+        maxSize = (int)gameManagerVariables.ringMaxSize;
+        scaleSpeed = gameManagerVariables.ringSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scaleSpeed = gameManagerScript.ringSpeed;
+        scaleSpeed = ringInstantiateScript.ringSpeed;
         this.transform.localScale = this.transform.localScale + new Vector3(scaleSpeed * Time.deltaTime, scaleSpeed * Time.deltaTime, 0);
 
         if(this.transform.localScale.x > maxSize){

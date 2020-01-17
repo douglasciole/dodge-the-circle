@@ -19,11 +19,13 @@ public class RingInstantiateScript : MonoBehaviour
 
 
     private GameObject currentInstance;
+    public CameraBehaviour cameraScript;
 
     // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
+        cameraScript = camera.GetComponent<CameraBehaviour>();
     }
 
     // Update is called once per frame
@@ -35,7 +37,6 @@ public class RingInstantiateScript : MonoBehaviour
             currentInstance = GameObject.Instantiate(tempObject,Vector3.zero,Quaternion.identity);
             currentInstance.transform.Rotate(Vector3.forward, Random.Range(-180,180));
             instantiateFlag = false;
-
         }
     }
 
@@ -60,6 +61,7 @@ public class RingInstantiateScript : MonoBehaviour
 
     public void spawnRing() {
         instantiateFlag = true;
+        cameraScript.beatTick = true;
     }
 
 
