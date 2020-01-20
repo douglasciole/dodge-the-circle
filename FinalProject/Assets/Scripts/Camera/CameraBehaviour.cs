@@ -87,9 +87,6 @@ public class CameraBehaviour : MonoBehaviour
         if(cameraTiltInMotion){
 
             float diff = Quaternion.Angle(camera.transform.rotation, Quaternion.Euler(cameraTiltTarget));
-            Debug.Log("camera rotation: "+camera.transform.rotation.eulerAngles.ToString());
-            Debug.Log("camera target"+ cameraTiltTarget.ToString());
-            Debug.Log("camera diff: "+diff);
             camera.transform.rotation = Quaternion.RotateTowards(camera.transform.rotation, Quaternion.Euler(cameraTiltTarget),cameraTiltSpeed);
             
             if(Mathf.Abs(diff) < 2f){
