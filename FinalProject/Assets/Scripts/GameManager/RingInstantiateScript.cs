@@ -6,11 +6,6 @@ public class RingInstantiateScript : MonoBehaviour
 {
     public float ringSpeed;
     public bool instantiateFlag;
-    public Camera camera;
-    private bool cameraZoomStartFlag;
-    private bool cameraZoomEndFlag;
-    private float cameraZoomSpeed = 0.5f;
-    private float t;
 
     public int level_0;
     public GameObject ringLevel_0_1;
@@ -21,17 +16,23 @@ public class RingInstantiateScript : MonoBehaviour
     private GameObject currentInstance;
     public CameraBehaviour cameraScript;
 
+    public Metronome metronomeScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        camera = Camera.main;
-        cameraScript = camera.GetComponent<CameraBehaviour>();
+        metronomeScript = this.GetComponent<Metronome>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         GameObject tempObject = PickFromList(0);
+
+        if(metronomeScript.beat){
+            instantiateFlag = true;
+            metronomeScript.beat = false;
+        }
         
         if(instantiateFlag){
             currentInstance = GameObject.Instantiate(tempObject,Vector3.zero,Quaternion.identity);

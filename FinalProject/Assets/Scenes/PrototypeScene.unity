@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 511155863}
   - component: {fileID: 511155864}
   - component: {fileID: 511155865}
+  - component: {fileID: 511155866}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -388,7 +389,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ringSpeed: 0.5
   instantiateFlag: 0
-  camera: {fileID: 0}
   level_0: 3
   ringLevel_0_1: {fileID: 3067477712335798993, guid: 473aac4ec58327c439434c43b1ec648e,
     type: 3}
@@ -397,6 +397,7 @@ MonoBehaviour:
   ringLevel_0_3: {fileID: 2466931777396534927, guid: f2f9960a3cf758c44a099dca807cc071,
     type: 3}
   cameraScript: {fileID: 0}
+  metronomeScript: {fileID: 0}
 --- !u!114 &511155865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +412,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ringSpeed: 0.5
   ringMaxSize: 5
+--- !u!114 &511155866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511155862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d46bbacdeb1a9c4f8c1389c3bc3dbcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerCounter: 0
+  timerTracker: 0
+  playingSong: {fileID: 0}
+  songBPM: 0
+  beatInterval: 0
+  beat: 0
+  halfBeat: 0
+  doubleBeat: 0
 --- !u!1 &534181911
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534181911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 569541c61cfa94b99916c022294193e6, type: 3}
   m_Name: 
