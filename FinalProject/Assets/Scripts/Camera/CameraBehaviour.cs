@@ -11,7 +11,7 @@ public class CameraBehaviour : MonoBehaviour
     private int cameraZoomCounter;
     public bool beatTick;
 
-    private Camera camera;
+    private Camera cameraMain;
     public float cameraMinFOV;
     public float cameraMaxFOV;
     public float cameraZoomSpeed;
@@ -29,19 +29,14 @@ public class CameraBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camera = this.GetComponentInParent<Camera>();
+        cameraMain = this.GetComponentInParent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(beatTick && !cameraZoomIn && !cameraZoomOut){
-            cameraZoomIn = true;
-            beatTick = false;
-        }
         
-        CameraZoom();
-        CameraTilt();
+        CameraZoomAndTilt();
         
     }
 
@@ -51,44 +46,17 @@ public class CameraBehaviour : MonoBehaviour
         cameraTiltCounter++;
     }
 
-    void CameraZoom()
-    {
-        if(cameraZoomIn){
-            //if(thisCamera.fieldOfView > cameraMinFOV){
-            if(camera.transform.position.z < cameraMaxFOV){
-                    //thisCamera.fieldOfView -= cameraZoomSpeed;
-                    camera.transform.position += new Vector3(0,0,cameraZoomSpeed);
-                }
-            if(cameraZoomCounter > cameraZoomThreshold){
-                cameraZoomIn = false;
-                cameraZoomOut = true;
-                cameraZoomCounter = 0; 
-            }
-        }
-        if(cameraZoomOut){
-            //if(thisCamera.fieldOfView < cameraMaxFOV){
-            if(camera.transform.position.z > cameraMinFOV){
-                    //thisCamera.fieldOfView += cameraZoomSpeed;
-                    camera.transform.position -= new Vector3(0,0,cameraZoomSpeed);
-                }
-            if(cameraZoomCounter > cameraZoomThreshold){
-                cameraZoomOut = false;
-                cameraZoomCounter = 0;
-            }
-        }
-    }
-
-    void CameraTilt(){
+    void CameraZoomAndTilt(){
         if(cameraTiltCounter > cameraTiltThreshold && !cameraTiltInMotion){
             cameraTiltInMotion = true;
-            cameraTiltTarget = new Vector3(Random.RandomRange(cameraTiltMinX, cameraTiltMaxX),Random.RandomRange(cameraTiltMinX, cameraTiltMaxX),0);
+            cameraTiltTarget = new Vector3(Random.Range(cameraTiltMinX, cameraTiltMaxX),Random.Range(cameraTiltMinX, cameraTiltMaxX),0);
         }
 
         if(cameraTiltInMotion){
 
-            float diff = Quaternion.Angle(camera.transform.rotation, Quaternion.Euler(cameraTiltTarget));
-            camera.transform.rotation = Quaternion.RotateTowards(camera.transform.rotation, Quaternion.Euler(cameraTiltTarget),cameraTiltSpeed);
-            
+            float diff = Quaternion.Angle(cameraMain.transform.rotation, Quaternion.Euler(cameraTiltTarget));
+            cameraMain.transform.rotation = Quaternion.RotateTowards(cameraMain.transform.rotation, Quaternion.Euler(cameraTiltTarget),cameraTiltSpeed);
+
             if(Mathf.Abs(diff) < 2f){
                 cameraTiltInMotion = false;
                 cameraTiltCounter = 0;

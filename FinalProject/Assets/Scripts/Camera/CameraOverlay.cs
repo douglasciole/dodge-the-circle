@@ -8,6 +8,8 @@ public class CameraOverlay : MonoBehaviour
     public Color materialColor;
     public Color colorChangeTarget;
 
+    public int colorChangeCounterStart;
+    public int colorChangeStartThreshold;
     public float colorChangeCounter;
     public float colorChangeThreshold;
     public float RMax;
@@ -27,17 +29,23 @@ public class CameraOverlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ColorChanger();
+        
     }
 
     void FixedUpdate() {
         colorChangeCounter++;
+        colorChangeCounterStart++;
+        
+        overlayMaterial.SetColor("_Color", materialColor);
+        if(colorChangeCounterStart > colorChangeStartThreshold){
+            ColorChanger();
+        }
     }
 
     void ColorChanger(){
         if(colorChangeCounter > colorChangeThreshold && !colorChangeInMotion){
             colorChangeInMotion = true;
-            colorChangeTarget = new Color(Random.RandomRange(RMin, RMax),Random.RandomRange(GMin, GMax),Random.RandomRange(BMin, BMax),0.5f);
+            colorChangeTarget = new Color(Random.Range(RMin, RMax),Random.Range(GMin, GMax),Random.Range(BMin, BMax),0.5f);
         }
 
         if(colorChangeInMotion){
@@ -51,7 +59,6 @@ public class CameraOverlay : MonoBehaviour
                 colorChangeCounter = 0;
             }
         }
-    overlayMaterial.SetColor("_Color", materialColor);
     }
 
 }

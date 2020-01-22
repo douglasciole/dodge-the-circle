@@ -6,6 +6,8 @@ public class GameManagerVariables : MonoBehaviour
 {
     public float ringSpeed;
     public float ringMaxSize;
+    public bool collisionFlag;
+    public int collisionCounter;
     // Start is called before the first frame update
     void Start()
     {
