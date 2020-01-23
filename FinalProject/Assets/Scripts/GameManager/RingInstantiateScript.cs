@@ -11,6 +11,7 @@ public class RingInstantiateScript : MonoBehaviour
     public GameObject ringLevel_0_1;
     public GameObject ringLevel_0_2;
     public GameObject ringLevel_0_3;
+    public GameObject ringLevel_0_4;
 
 
     private GameObject currentInstance;
@@ -52,6 +53,8 @@ public class RingInstantiateScript : MonoBehaviour
                         return ringLevel_0_2; 
                     case 2: 
                         return ringLevel_0_3;
+                    case 3:
+                        return ringLevel_0_4;
                     default:
                         return ringLevel_0_1; 
                 }
