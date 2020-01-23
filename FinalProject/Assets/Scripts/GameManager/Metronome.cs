@@ -26,17 +26,16 @@ public class Metronome : MonoBehaviour
     void FixedUpdate() {
         timerCounter++;
         timerTracker += Time.deltaTime;
-        Debug.Log("diff: "+timerCounter/timerTracker);
         CheckForBeat();
     }
 
     void CheckForBeat(){
         if(timerCounter % beatInterval == 0){
             beat = true;
-            Debug.Log("Beat");
+            // Debug.Log("Beat");
         }else if(timerCounter % (beatInterval/2) == 0){
             halfBeat = true;
-            Debug.Log("Half Beat");
+            // Debug.Log("Half Beat");
         }
     }
 }

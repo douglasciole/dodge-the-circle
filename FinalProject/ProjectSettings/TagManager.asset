@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Game Manager
   - Ring
+  - RingAsset
   layers:
   - Default
   - TransparentFX
