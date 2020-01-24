@@ -486,8 +486,7 @@ MonoBehaviour:
   arrayLevel_0: []
   arrayLevel_1: []
   arrayLevel_2: []
-  ringTest: {fileID: 3051276550472628706, guid: 267aa927fdf8db44daea181d852d00ae,
-    type: 3}
+  ringTest: {fileID: 0}
   metronomeScript: {fileID: 0}
 --- !u!114 &511155865
 MonoBehaviour:
