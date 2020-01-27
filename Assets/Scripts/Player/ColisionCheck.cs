@@ -24,7 +24,9 @@ public class ColisionCheck : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) 
     {    
         collisionFlag = true;
-        if(other.transform.tag == "Ring")
+        if (other.transform.tag == "RingAsset")
+        {
             gameManagerScript.collisionFlag = true;
+        }
     }
 }

@@ -1,7 +1,10 @@
 ﻿<Properties StartupConfiguration="{E1456745-ED92-4EB6-8905-E64DC1E47277}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StartScene/SceneManagement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndGame/EndGame.cs">
     <Files>
       <File FileName="Assets/Scripts/StartScene/SceneManagement.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/EndGame/EndGame.cs" Line="15" Column="6" />
+      <File FileName="Assets/Scripts/Player/ColisionCheck.cs" />
+      <File FileName="Assets/Scripts/GameManager/Timer.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,9 +12,12 @@
           <Node name="FinalProject" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="StartScene" expanded="True">
-                  <Node name="SceneManagement.cs" selected="True" />
+                <Node name="EndGame" expanded="True">
+                  <Node name="EndGame.cs" selected="True" />
                 </Node>
+                <Node name="GameManager" expanded="True" />
+                <Node name="Player" expanded="True" />
+                <Node name="StartScene" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -21,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8f86fcc1-8586-4d5d-9c80-ca95949a044d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9a28779f-d145-4b27-9bc0-7ae31cfc42ad" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
