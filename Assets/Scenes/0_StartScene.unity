@@ -437,7 +437,6 @@ GameObject:
   - component: {fileID: 226185488}
   - component: {fileID: 226185490}
   - component: {fileID: 226185489}
-  - component: {fileID: 226185491}
   - component: {fileID: 226185492}
   m_Layer: 5
   m_Name: Title
@@ -505,18 +504,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226185487}
   m_CullTransparentMesh: 0
---- !u!114 &226185491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226185487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ac3d6023d57401682ec34b27e9bbb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &226185492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +530,6 @@ GameObject:
   - component: {fileID: 531182116}
   - component: {fileID: 531182120}
   - component: {fileID: 531182119}
-  - component: {fileID: 531182118}
   - component: {fileID: 531182117}
   m_Layer: 0
   m_Name: PlayerBall
@@ -587,20 +573,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &531182118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531182115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902c98073adf94c4fa3ab1b3d6c2ce7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionFlag: 0
-  gameManagerScript: {fileID: 0}
 --- !u!58 &531182119
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -675,7 +647,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 961957783}
-  - component: {fileID: 961957782}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -683,19 +654,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &961957782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961957781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4866f0d7bb8f3451d867e67f6639e0e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 3
 --- !u!4 &961957783
 Transform:
   m_ObjectHideFlags: 0
@@ -946,6 +904,7 @@ GameObject:
   - component: {fileID: 1327099352}
   - component: {fileID: 1327099351}
   - component: {fileID: 1327099350}
+  - component: {fileID: 1327099354}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -1028,6 +987,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327099354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327099349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ac3d6023d57401682ec34b27e9bbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813949824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1070,7 @@ MeshCollider:
   m_GameObject: {fileID: 1813949824}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14

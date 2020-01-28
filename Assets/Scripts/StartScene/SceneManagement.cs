@@ -9,13 +9,13 @@ public class SceneManagement : MonoBehaviour
     {
         if(Input.touchCount > 0)
         {
-            SceneManager.LoadScene("PrototypeScene");
+            SceneManager.LoadScene("1_GamePlay");
         }
 
         // for debug
-        if (Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("PrototypeScene");
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    SceneManager.LoadScene("PrototypeScene");
+        //}
     }
 }

@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{E1456745-ED92-4EB6-8905-E64DC1E47277}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndGame/EndGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndGame/Restart.cs">
     <Files>
-      <File FileName="Assets/Scripts/StartScene/SceneManagement.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/EndGame/EndGame.cs" Line="15" Column="6" />
-      <File FileName="Assets/Scripts/Player/ColisionCheck.cs" />
-      <File FileName="Assets/Scripts/GameManager/Timer.cs" />
+      <File FileName="Assets/Scripts/EndGame/EndGame.cs" Line="14" Column="25" />
+      <File FileName="Assets/Scripts/GameManager/Timer.cs" Line="38" Column="1" />
+      <File FileName="Assets/Scripts/Player/ColisionCheck.cs" Line="42" Column="2" />
+      <File FileName="Assets/Scripts/GameManager/GameManagerVariables.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/EndGame/Restart.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/GameManager/TimerVariable.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,10 +15,11 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="EndGame" expanded="True">
-                  <Node name="EndGame.cs" selected="True" />
+                  <Node name="Restart.cs" selected="True" />
                 </Node>
                 <Node name="GameManager" expanded="True" />
                 <Node name="Player" expanded="True" />
+                <Node name="Rings" expanded="True" />
                 <Node name="StartScene" expanded="True" />
               </Node>
             </Node>
