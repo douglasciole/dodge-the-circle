@@ -540,8 +540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd749f2e0fed4bf6aa79daeda91e362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 0}
   lastTime: {fileID: 888005630}
+  timerVariable: {fileID: 0}
 --- !u!1 &1089529248
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +889,6 @@ GameObject:
   - component: {fileID: 1969565937}
   - component: {fileID: 1969565941}
   - component: {fileID: 1969565940}
-  - component: {fileID: 1969565939}
   - component: {fileID: 1969565938}
   m_Layer: 0
   m_Name: Main Camera
@@ -921,43 +920,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1969565936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb9611ca83e7044caef03ea8a7e3cb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraMoveThreshold: 0
-  cameraMaxX: 6
-  cameraMinX: -6
-  cameraMaxY: 6
-  cameraMinY: -6
-  cameraMaxZ: -9
-  cameraMinZ: -7
-  cameraMoveSpeed: 4
-  cameraMoveInMotion: 0
-  cameraMoveTarget: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
---- !u!114 &1969565939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969565936}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17d20c95becc4f646b5f64c48fd135de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraZoomThreshold: 20
-  beatTick: 1
-  cameraMinFOV: -10
-  cameraMaxFOV: -9.5
-  cameraZoomSpeed: 0.05
-  cameraTiltThreshold: 0
-  cameraTiltMaxX: 10
-  cameraTiltMinX: -10
-  cameraTiltMaxY: 20
-  cameraTiltMinY: -20
-  cameraTiltSpeed: 0.075
+  cameraMoveThreshold: 0
+  cameraMaxX: 0
+  cameraMinX: 0
+  cameraMaxY: 0
+  cameraMinY: 0
+  cameraMaxZ: 0
+  cameraMinZ: 0
+  cameraMoveSpeed: 0
+  cameraMoveInMotion: 0
+  cameraMoveTarget: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!81 &1969565940
 AudioListener:
   m_ObjectHideFlags: 0
