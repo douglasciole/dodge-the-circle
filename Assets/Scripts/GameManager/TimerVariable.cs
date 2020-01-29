@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class TimerVariable : MonoBehaviour
 {
-    public float survivedTime;
+    public static float survivedTime;
 
-    // Start is called before the first frame update
-    void Start()
+    public static TimerVariable instance;
+
+    private void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
     }
 
 }

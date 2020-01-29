@@ -8,7 +8,6 @@ public class ColisionCheck : MonoBehaviour
     public bool collisionFlag;
     public GameManagerVariables gameManagerScript;
     public Timer timer;
-    public TimerVariable timerVariable;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +35,7 @@ public class ColisionCheck : MonoBehaviour
             gameManagerScript.collisionFlag = true;
         }
 
-        timerVariable.survivedTime = timer.getTime();
+        TimerVariable.survivedTime = timer.getTime();
         SceneManager.LoadScene("2_EndScene");
     }
 }

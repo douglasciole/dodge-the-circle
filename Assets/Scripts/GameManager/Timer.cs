@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public GameManagerVariables gameManagerScript;
     public float time = 0;
     public int min = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class Timer : MonoBehaviour
             min++;
             time -= 60;
         }
-        timeText.text = string.Format("{0:}:{1:N2}", min, time);
+        timeText.text = string.Format("{0:}:{1:N3}", min, time);
     }
 
     public float getTime()

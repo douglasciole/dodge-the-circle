@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class EndGame : MonoBehaviour
 {
     public Text lastTime;
-    public TimerVariable timerVariable;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerVariable = GameObject.Find("TimerVariable").GetComponent<TimerVariable>();
-        lastTime.text = timerVariable.survivedTime.ToString();
+        Debug.Log(TimerVariable.survivedTime);
+
+        lastTime.text = TimerVariable.survivedTime.ToString();
     }
 
     // Update is called once per frame
