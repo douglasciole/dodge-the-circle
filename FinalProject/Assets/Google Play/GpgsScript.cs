@@ -77,13 +77,12 @@ public class GpgsScript : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-            Social.ReportScore(points, leaderBoard, (bool success) =>
+
+            Social.ReportScore(100, "CgkIx-rq2fAREAIQAA", (bool success) =>
             {
                 if (success)
                 {
-                    points = 0;
-                    pointsText.text = "Points: " + points;
-
+                    Debug.Log("Success");
                 }
                 else
                 {

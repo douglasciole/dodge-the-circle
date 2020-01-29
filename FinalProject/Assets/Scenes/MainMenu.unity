@@ -415,6 +415,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7824675970260971607, guid: 6d41851e2777b354dbf05521ad184718,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824675970672103065, guid: 6d41851e2777b354dbf05521ad184718,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7824675970678099991, guid: 6d41851e2777b354dbf05521ad184718,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -579,6 +589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: addScoreLeaderBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824675972114811509, guid: 6d41851e2777b354dbf05521ad184718,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7824675972114811509, guid: 6d41851e2777b354dbf05521ad184718,
         type: 3}
