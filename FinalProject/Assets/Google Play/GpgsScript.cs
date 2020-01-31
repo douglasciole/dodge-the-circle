@@ -70,15 +70,16 @@ public class GpgsScript : MonoBehaviour
         Social.ShowAchievementsUI();
     }
 
+
     /// <summary>
     /// Adds score to Leaderboard
     /// </summary>
-    public void addScoreLeaderBoard()
+    public void addArchivementUm()
     {
         if (Social.localUser.authenticated)
         {
 
-            Social.ReportScore(100, "CgkIx-rq2fAREAIQAA", (bool success) =>
+            Social.ReportProgress("CgkIx-rq2fAREAIQAg", 100, (bool success) =>
             {
                 if (success)
                 {
@@ -90,6 +91,58 @@ public class GpgsScript : MonoBehaviour
                 }
             });
         }
+    }
+
+    /// <summary>
+    /// Adds score to Leaderboard
+    /// </summary>
+    public void addArchivementDois()
+    {
+        if (Social.localUser.authenticated)
+        {
+
+            Social.ReportProgress("CgkIx-rq2fAREAIQAw", 100, (bool success) =>
+            {
+                if (success)
+                {
+                    Debug.Log("Success");
+                }
+                else
+                {
+                    Debug.Log("Update Score Fail");
+                }
+            });
+        }
+    }
+
+    public static void LogScoreInGameService(int score, string leaderBoard)
+    {
+        if (!PlayGamesPlatform.Instance.localUser.authenticated)
+        {
+            return;
+        }
+        PlayGamesPlatform.Instance.ReportScore(score, leaderBoard, (bool success) =>
+        {
+            if (success)
+            {
+                Debug.Log("log to leaderboard succeeded");
+            }
+            else
+            {
+                Debug.Log("log to leaderboard failed");
+            }
+        });
+    }
+
+    /// <summary>
+    /// Adds score to Leaderboard
+    /// </summary>
+    public void addScore()
+    {
+        Social.ReportScore(1000, "CgkIx-rq2fAREAIQAA", success =>
+        {
+            Social.ShowLeaderboardUI();
+        });
     }
 
     /// <summary>

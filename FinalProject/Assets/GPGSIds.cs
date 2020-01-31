@@ -24,8 +24,12 @@
 
 public static class GPGSIds
 {
+        public const string achievement_dodge_30 = "CgkIx-rq2fAREAIQBA"; // <GPGSID>
+        public const string achievement_dodge_100 = "CgkIx-rq2fAREAIQBg"; // <GPGSID>
+        public const string achievement_dodge_15 = "CgkIx-rq2fAREAIQAw"; // <GPGSID>
         public const string leaderboard_highscore = "CgkIx-rq2fAREAIQAA"; // <GPGSID>
-        public const string achievement_points = "CgkIx-rq2fAREAIQAg"; // <GPGSID>
+        public const string achievement_dodge_5 = "CgkIx-rq2fAREAIQAg"; // <GPGSID>
+        public const string achievement_dodge_50 = "CgkIx-rq2fAREAIQBQ"; // <GPGSID>
 
 }
 
