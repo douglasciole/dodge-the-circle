@@ -14,28 +14,32 @@ public class Metronome : MonoBehaviour
     public bool halfBeat;
     public bool doubleBeat;
     private bool skipNext;
-    // Start is called before the first frame update
+
+    public bool spawnRing;
+
     void Start()
     {
         playingSong = GameObject.Find("AudioProcessor").GetComponent<AudioSource>().clip;
-        songBPM = float.Parse(playingSong.name.Substring(0,3).ToString());
-        beatInterval = Mathf.Round((50*60)/songBPM);
-
+        songBPM = float.Parse(playingSong.name.Substring(0, 3).ToString());
+        beatInterval = Mathf.Round((50 * 60) / songBPM);
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         timerCounter++;
         timerTracker += Time.deltaTime;
         CheckForBeat();
     }
 
-    void CheckForBeat(){
-        if(timerCounter % beatInterval == 0){
+    void CheckForBeat()
+    {
+        if (timerCounter % beatInterval == 0)
+        {
             beat = true;
-            // Debug.Log("Beat");
-        }else if(timerCounter % (beatInterval/2) == 0){
+        }
+        else if (timerCounter % (beatInterval / 2) == 0)
+        {
             halfBeat = true;
-            // Debug.Log("Half Beat");
         }
     }
 }
