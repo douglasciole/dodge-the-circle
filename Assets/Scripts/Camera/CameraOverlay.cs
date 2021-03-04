@@ -20,45 +20,29 @@ public class CameraOverlay : MonoBehaviour
     public float BMin;
     public float colorChangeSpeed;
     public bool colorChangeInMotion;
-    
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-    }
-
-    void FixedUpdate() {
         colorChangeCounter++;
-        colorChangeCounterStart++;
-        
-        overlayMaterial.SetColor("_Color", materialColor);
-        if(colorChangeCounterStart > colorChangeStartThreshold){
-            ColorChanger();
-        }
+        colorChangeCounterStart++; overlayMaterial.SetColor("_Color", materialColor);
+        if (colorChangeCounterStart > colorChangeStartThreshold) { ColorChanger(); }
     }
-
-    void ColorChanger(){
-        if(colorChangeCounter > colorChangeThreshold && !colorChangeInMotion){
+    void ColorChanger()
+    {
+        if (colorChangeCounter > colorChangeThreshold && !colorChangeInMotion)
+        {
             colorChangeInMotion = true;
-            colorChangeTarget = new Color(Random.Range(RMin, RMax),Random.Range(GMin, GMax),Random.Range(BMin, BMax),0.5f);
+            colorChangeTarget = new Color(Random.Range(RMin, RMax), Random.Range(GMin, GMax), Random.Range(BMin, BMax), 1f);
         }
-
-        if(colorChangeInMotion){
-
-            materialColor = Color.Lerp(materialColor,colorChangeTarget ,colorChangeSpeed);
-            
-            float diff = Vector4.Distance(materialColor,colorChangeTarget);
-            
-            if(Mathf.Abs(diff) < 0.01f){
+        if (colorChangeInMotion)
+        {
+            materialColor = Color.Lerp(materialColor, colorChangeTarget, colorChangeSpeed);
+            float diff = Vector4.Distance(materialColor, colorChangeTarget);
+            if (Mathf.Abs(diff) < 0.01f)
+            {
                 colorChangeInMotion = false;
                 colorChangeCounter = 0;
             }
         }
     }
-
 }
