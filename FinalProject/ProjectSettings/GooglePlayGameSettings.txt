@@ -1,0 +1,9 @@
+lastUpgrade=01006
+proj.pluginVersion=0.10.06
+proj.AppId=614368720199
+and.BundleId=ca.ccc.dodgethecircle
+proj.classDir=Assets
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0a%3c%21--%0aGoogle+Play+game+services+IDs.%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0a--%3e%0a%3cresources%3e%0a++%3c%21--+app_id+--%3e%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e614368720199%3c%2fstring%3e%0a++%3c%21--+package_name+--%3e%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3eca.ccc.dodgethecircle%3c%2fstring%3e%0a++%3c%21--+achievement+Dodge+5+--%3e%0a++%3cstring+name%3d%22achievement_dodge_5%22+translatable%3d%22false%22%3eCgkIx-rq2fAREAIQAg%3c%2fstring%3e%0a++%3c%21--+achievement+Dodge+15+--%3e%0a++%3cstring+name%3d%22achievement_dodge_15%22+translatable%3d%22false%22%3eCgkIx-rq2fAREAIQAw%3c%2fstring%3e%0a++%3c%21--+achievement+Dodge+30+--%3e%0a++%3cstring+name%3d%22achievement_dodge_30%22+translatable%3d%22false%22%3eCgkIx-rq2fAREAIQBA%3c%2fstring%3e%0a++%3c%21--+achievement+Dodge+50+--%3e%0a++%3cstring+name%3d%22achievement_dodge_50%22+translatable%3d%22false%22%3eCgkIx-rq2fAREAIQBQ%3c%2fstring%3e%0a++%3c%21--+achievement+Dodge+100+--%3e%0a++%3cstring+name%3d%22achievement_dodge_100%22+translatable%3d%22false%22%3eCgkIx-rq2fAREAIQBg%3c%2fstring%3e%0a++%3c%21--+leaderboard+HighScore+--%3e%0a++%3cstring+name%3d%22leaderboard_highscore%22+translatable%3d%22false%22%3eCgkIx-rq2fAREAIQAA%3c%2fstring%3e%0a%3c%2fresources%3e%0a
+and.ClientId=
+android.SetupDone=true
