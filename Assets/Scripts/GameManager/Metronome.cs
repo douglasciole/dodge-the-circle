@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Metronome : MonoBehaviour
 {
-    public float timerCounter;
-    public float timerTracker;
-    public AudioClip playingSong;
-    public float songBPM;
-    public float beatInterval;
+    [SerializeField] private float timerCounter;
+    [SerializeField] private float timerTracker;
+    [SerializeField] private AudioClip playingSong;
+    [SerializeField] private float songBPM;
+    [SerializeField] private float beatInterval;
 
-    public bool beat;
-    public bool halfBeat;
-    public bool doubleBeat;
-    private bool skipNext;
+    [SerializeField] private bool beatFlag;
+    [SerializeField] private bool skipNext;
+    public bool[] beatTempo;
 
     public bool spawnRing;
 
     void Start()
     {
-        playingSong = GameObject.Find("AudioProcessor").GetComponent<AudioSource>().clip;
+        playingSong = GameObject.Find("AudioSource").GetComponent<AudioSource>().clip;
         songBPM = float.Parse(playingSong.name.Substring(0, 3).ToString());
         beatInterval = Mathf.Round((50 * 60) / songBPM);
+        beatTempo = new bool[4] { true, false, false, false };
     }
 
     void FixedUpdate()
@@ -29,17 +29,50 @@ public class Metronome : MonoBehaviour
         timerCounter++;
         timerTracker += Time.deltaTime;
         CheckForBeat();
+        SpawnLogic();
     }
 
     void CheckForBeat()
     {
         if (timerCounter % beatInterval == 0)
         {
-            beat = true;
-        }
-        else if (timerCounter % (beatInterval / 2) == 0)
-        {
-            halfBeat = true;
+            NextTempo();
+            beatFlag = true;
         }
     }
+
+    void SpawnLogic()
+    {
+        if (beatFlag)
+        {
+            spawnRing = true;
+            beatFlag = false;
+        }
+    }
+
+    void NextTempo()
+    {
+        if (beatTempo[0])
+        {
+            beatTempo[0] = false;
+            beatTempo[1] = true;
+        }
+        else if (beatTempo[1])
+        {
+            beatTempo[1] = false;
+            beatTempo[2] = true;
+        }
+        else if (beatTempo[2])
+        {
+            beatTempo[2] = false;
+            beatTempo[3] = true;
+        }
+        else if (beatTempo[3])
+        {
+            beatTempo[3] = false;
+            beatTempo[0] = true;
+        }
+
+    }
+
 }

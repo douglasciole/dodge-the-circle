@@ -19,12 +19,15 @@ public class TimerLabel : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time >= 60)
+        if (time >= 10)
         {
-            min++;
-            time -= 60;
+            timeText.text = string.Format("{0:N2}", time);
+        }
+        else
+        {
+            timeText.text = string.Format("0{0:N2}", time);
         }
 
-        timeText.text = string.Format("{0:}:{1:N2}", min, time);
+
     }
 }

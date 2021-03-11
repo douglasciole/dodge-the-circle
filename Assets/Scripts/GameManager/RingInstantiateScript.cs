@@ -7,9 +7,7 @@ public class RingInstantiateScript : MonoBehaviour
     public float ringSpeed;
     public bool instantiateFlag;
 
-    public List<GameObject> arrayLevel_0;
-    public List<GameObject> arrayLevel_1;
-    public List<GameObject> arrayLevel_2;
+    public List<GameObject> arrayLevel_0, arrayLevel_1, arrayLevel_2, arrayLevel_3, arrayLevel_4, arrayLevel_5;
     public GameObject ringTest;
 
     private GameObject currentInstance;
@@ -17,6 +15,9 @@ public class RingInstantiateScript : MonoBehaviour
     public Metronome metronomeScript;
 
     public int phase;
+    public int maxPhase;
+    public float gameTimer;
+    public int maxPhaseTimer;
 
     void Start()
     {
@@ -25,28 +26,31 @@ public class RingInstantiateScript : MonoBehaviour
         arrayLevel_0 = PopulateInstantiateList(0);
         arrayLevel_1 = PopulateInstantiateList(1);
         arrayLevel_2 = PopulateInstantiateList(2);
+        arrayLevel_3 = PopulateInstantiateList(2);
+        arrayLevel_4 = PopulateInstantiateList(2);
+        arrayLevel_5 = PopulateInstantiateList(2);
     }
 
     void FixedUpdate()
     {
 
-        if (metronomeScript.spawnRing)
+        gameTimer += Time.deltaTime;
+
+        if (phase < maxPhase)
         {
-            instantiateFlag = true;
-            metronomeScript.spawnRing = false;
+            if (gameTimer > (maxPhaseTimer / maxPhase) * (phase + 1))
+            {
+                phase++;
+            }
         }
 
-        if (instantiateFlag)
+
+        if (metronomeScript.spawnRing)
         {
+            metronomeScript.spawnRing = false;
             //Level selector
             GameObject tempObject = PickFromLevel(phase);
-
-            //instantiating tempObject
             currentInstance = GameObject.Instantiate(tempObject, Vector3.zero, Quaternion.identity);
-            // Rotate on create
-            // currentInstance.GetComponent<RotationScript>().rotationSpeed = 0;
-            // currentInstance.GetComponent<RotationScript>().randomInitial = false;
-
             instantiateFlag = false;
         }
     }
@@ -67,15 +71,23 @@ public class RingInstantiateScript : MonoBehaviour
                 {
                     return arrayLevel_0[Random.Range(0, arrayLevel_2.Count)];
                 }
+            case 3:
+                {
+                    return arrayLevel_0[Random.Range(0, arrayLevel_3.Count)];
+                }
+            case 4:
+                {
+                    return arrayLevel_0[Random.Range(0, arrayLevel_4.Count)];
+                }
+            case 5:
+                {
+                    return arrayLevel_0[Random.Range(0, arrayLevel_5.Count)];
+                }
             default:
                 return ringTest;
         }
     }
 
-    public void spawnRing()
-    {
-        instantiateFlag = true;
-    }
 
     public List<GameObject> PopulateInstantiateList(int inputLevel)
     {

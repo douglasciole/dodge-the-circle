@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -43,5 +44,10 @@ public class OptionsManager : MonoBehaviour
         PlayerPrefs.SetFloat("Fx_Volume", fx_volume);
         PlayerPrefs.SetInt("Vibr_State", vibr_state ? 1 : 0);
         PlayerPrefs.SetInt("Camera_State", camera_state ? 1 : 0);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("1_MenuScene", LoadSceneMode.Single);
     }
 }

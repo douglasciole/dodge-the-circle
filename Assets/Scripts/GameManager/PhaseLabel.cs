@@ -16,6 +16,6 @@ public class PhaseLabel : MonoBehaviour
 
     void Update()
     {
-        phaseText.text = string.Format("Lvl {0}", ringScript.phase + 1);
+        phaseText.text = string.Format("Lvl {0}", ringScript.phase);
     }
 }

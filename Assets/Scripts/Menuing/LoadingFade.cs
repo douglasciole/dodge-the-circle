@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoadingFade : MonoBehaviour
 {
@@ -45,6 +46,6 @@ public class LoadingFade : MonoBehaviour
 
     void LoadMenu()
     {
-        Debug.Log("Load the game");
+        SceneManager.LoadScene("1_MenuScene", LoadSceneMode.Single);
     }
 }

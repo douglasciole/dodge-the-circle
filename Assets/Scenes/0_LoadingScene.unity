@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -548,3 +548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6259523517afdee4994086b2e23bb429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialTimer: 0.5
+  fadeInTimer: 0.5
+  stayTimer: 2
+  fadeOutTimer: 0.5
+  initialFade: {r: 1, g: 1, b: 1, a: 0}
+  timer: 0
+  img: {fileID: 0}
