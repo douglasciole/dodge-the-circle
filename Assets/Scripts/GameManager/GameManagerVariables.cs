@@ -33,6 +33,14 @@ public class GameManagerVariables : MonoBehaviour
 
     void EndGameTransition()
     {
+        float timer = this.GetComponent<RingInstantiateScript>().gameTimer;
+        PlayerPrefs.SetFloat("Last_Score", timer);
+        var hs = PlayerPrefs.GetFloat("High_Score", 0);
+        if (timer > hs)
+        {
+            PlayerPrefs.SetFloat("High_Score", timer);
+        }
+
         SceneManager.LoadScene("3_ScoreScene", LoadSceneMode.Single);
     }
 }

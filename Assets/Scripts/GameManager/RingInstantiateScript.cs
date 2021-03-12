@@ -26,9 +26,9 @@ public class RingInstantiateScript : MonoBehaviour
         arrayLevel_0 = PopulateInstantiateList(0);
         arrayLevel_1 = PopulateInstantiateList(1);
         arrayLevel_2 = PopulateInstantiateList(2);
-        arrayLevel_3 = PopulateInstantiateList(2);
-        arrayLevel_4 = PopulateInstantiateList(2);
-        arrayLevel_5 = PopulateInstantiateList(2);
+        arrayLevel_3 = PopulateInstantiateList(3);
+        arrayLevel_4 = PopulateInstantiateList(4);
+        arrayLevel_5 = PopulateInstantiateList(5);
     }
 
     void FixedUpdate()
@@ -61,27 +61,27 @@ public class RingInstantiateScript : MonoBehaviour
         {
             case 0:
                 {
-                    return arrayLevel_0[Random.Range(0, arrayLevel_0.Count)];
+                    return arrayLevel_0[Random.Range(0, arrayLevel_0.Count - 1)];
                 }
             case 1:
                 {
-                    return arrayLevel_0[Random.Range(0, arrayLevel_1.Count)];
+                    return arrayLevel_1[Random.Range(0, arrayLevel_1.Count - 1)];
                 }
             case 2:
                 {
-                    return arrayLevel_0[Random.Range(0, arrayLevel_2.Count)];
+                    return arrayLevel_2[Random.Range(0, arrayLevel_2.Count - 1)];
                 }
             case 3:
                 {
-                    return arrayLevel_0[Random.Range(0, arrayLevel_3.Count)];
+                    return arrayLevel_3[Random.Range(0, arrayLevel_3.Count - 1)];
                 }
             case 4:
                 {
-                    return arrayLevel_0[Random.Range(0, arrayLevel_4.Count)];
+                    return arrayLevel_4[Random.Range(0, arrayLevel_4.Count - 1)];
                 }
             case 5:
                 {
-                    return arrayLevel_0[Random.Range(0, arrayLevel_5.Count)];
+                    return arrayLevel_5[Random.Range(0, arrayLevel_5.Count - 1)];
                 }
             default:
                 return ringTest;

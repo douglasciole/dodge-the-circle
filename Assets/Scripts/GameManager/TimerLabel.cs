@@ -8,7 +8,6 @@ public class TimerLabel : MonoBehaviour
     public Text timeText;
 
     private float time = 0;
-    private int min = 0;
 
     void Start()
     {
