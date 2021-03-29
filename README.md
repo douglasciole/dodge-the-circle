@@ -2,7 +2,7 @@
 - Music volume 		-> Music_Volume 	-> Float	0~1
 - FX volume 		-> Fx_Volume		-> Float	0~1
 - Vibration			-> Vibr_State		-> Int		1 = true, 0 = false
-- Camera move 		-> Camera_State		-> Int		1 = true, 0 = false
+- Camera move 		-> Camera_Move		-> float	0~1
 - High score		-> High_Score		-> float	straight value
 - Last score		-> Last_Score		-> float	straight value
 - Overlay Color.R	-> Overlay_R		-> float 	straight value

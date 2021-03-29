@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,15 +6,13 @@ using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
-    // this value can be changed
+    public float maxRotateSpeed, accelSpeed;
     public float rotateSpeed;
 
     public GameObject player;
-
     public Button l_button, r_button;
     public bool l_pressed, r_pressed;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
@@ -22,19 +20,40 @@ public class PlayerControl : MonoBehaviour
         r_button = transform.GetChild(0).transform.Find("R_Button").GetComponent<Button>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+
         if (l_pressed && !r_pressed)
         {
-            player.transform.Rotate(Vector3.forward * rotateSpeed);
+            // Vibration.QuickVibration();
+            player.transform.Rotate(Vector3.forward * RotateSpeed(true));
         }
-        if (r_pressed && !l_pressed)
+        else if (r_pressed && !l_pressed)
         {
-            player.transform.Rotate(Vector3.back * rotateSpeed);
+            // Vibration.QuickVibration();
+            player.transform.Rotate(Vector3.back * RotateSpeed(true));
+        }
+        else
+        {
+            RotateSpeed(false);
         }
     }
 
+    float RotateSpeed(bool accelMode)
+    {
+        if (accelMode == false)
+        {
+            rotateSpeed = 0;
+        }
+        if (rotateSpeed < maxRotateSpeed)
+        {
+            rotateSpeed += accelSpeed;
+        }
+        return rotateSpeed;
+
+    }
+
+    //Editor buttons methods
     public void L_ButtonDown()
     {
         l_pressed = true;

@@ -466,7 +466,7 @@ MonoBehaviour:
   ringMaxSize: 5
   collisionFlag: 0
   collisionCounter: 0
-  maxLives: 3
+  maxLives: 0
 --- !u!114 &511155866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4866f0d7bb8f3451d867e67f6639e0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRotateSpeed: 6
+  accelSpeed: 0.5
   rotateSpeed: 3
   player: {fileID: 0}
   l_button: {fileID: 0}
@@ -528,11 +530,11 @@ MonoBehaviour:
   possibleTargets:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.6666667, b: 0, a: 1}
-  - {r: 0.6666666, g: 1, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0.6000001, g: 0.9, b: 0, a: 1}
+  - {r: 0, g: 0.9, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.66666675, a: 1}
   - {r: 0, g: 0.666667, b: 1, a: 1}
-  - {r: 0.199, g: 0.199, b: 1, a: 1}
+  - {r: 0.17999998, g: 0.17999998, b: 0.9, a: 1}
   - {r: 0.7613332, g: 0.28400004, b: 1, a: 1}
   - {r: 1, g: 0, b: 0.6666665, a: 1}
   colorChangeSpeed: 0.015
@@ -640,8 +642,9 @@ GameObject:
   m_Component:
   - component: {fileID: 534181912}
   - component: {fileID: 534181914}
+  - component: {fileID: 534181913}
   m_Layer: 0
-  m_Name: AudioSource
+  m_Name: GameAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,6 +664,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534181913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534181911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f355fce54237e44bb463f5860b2c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amFx: 0
 --- !u!82 &534181914
 AudioSource:
   m_ObjectHideFlags: 0
@@ -668,7 +684,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534181911}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bf6d98a695d4c4c43974b9f58b6f1a5e, type: 3}
@@ -948,7 +964,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.24999999
+  m_Radius: 0.1
 --- !u!114 &925104763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,7 +1092,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1018320751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb9611ca83e7044caef03ea8a7e3cb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 17d20c95becc4f646b5f64c48fd135de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraMoveThreshold: 0
@@ -1090,6 +1106,7 @@ MonoBehaviour:
   cameraMoveInMotion: 0
   cameraMoveTarget: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  cameraMoveSetting: 0
 --- !u!1 &1273612479
 GameObject:
   m_ObjectHideFlags: 0

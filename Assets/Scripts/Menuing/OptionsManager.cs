@@ -6,18 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class OptionsManager : MonoBehaviour
 {
-    public float music_volume, fx_volume;
-    public bool vibr_state, camera_state;
+    public float music_volume, fx_volume, camera_move;
+    public bool vibr_state;
 
-    public Slider music_slider, fx_slider;
-    public Toggle vibr_toggle, camera_toggle;
+    public Slider music_slider, fx_slider, camera_slider;
+    public Toggle vibr_toggle;
 
     private void Start()
     {
+
         music_volume = PlayerPrefs.GetFloat("Music_Volume", 1);
         fx_volume = PlayerPrefs.GetFloat("Fx_Volume", 1);
+        camera_move = PlayerPrefs.GetFloat("Camera_Move", .5f);
         vibr_state = (PlayerPrefs.GetInt("Vibr_State", 1) > .5) ? true : false;
-        camera_state = (PlayerPrefs.GetInt("Camera_State", 1) > .5) ? true : false;
         UpdateUI();
     }
 
@@ -25,8 +26,8 @@ public class OptionsManager : MonoBehaviour
     {
         music_volume = music_slider.value;
         fx_volume = fx_slider.value;
+        camera_move = camera_slider.value / 4;
         vibr_state = vibr_toggle.isOn;
-        camera_state = camera_toggle.isOn;
         UpdatePrefs();
     }
 
@@ -34,20 +35,33 @@ public class OptionsManager : MonoBehaviour
     {
         music_slider.value = music_volume;
         fx_slider.value = fx_volume;
+        camera_slider.value = camera_move * 4;
         vibr_toggle.isOn = vibr_state;
-        camera_toggle.isOn = camera_state;
     }
 
     void UpdatePrefs()
     {
         PlayerPrefs.SetFloat("Music_Volume", music_volume);
         PlayerPrefs.SetFloat("Fx_Volume", fx_volume);
+        PlayerPrefs.SetFloat("Camera_Move", camera_move);
         PlayerPrefs.SetInt("Vibr_State", vibr_state ? 1 : 0);
-        PlayerPrefs.SetInt("Camera_State", camera_state ? 1 : 0);
     }
 
     public void LoadMenu()
     {
+        Vibration.QuickVibration();
         SceneManager.LoadScene("1_MenuScene", LoadSceneMode.Single);
     }
+
+    public void QuickVibration()
+    {
+        Vibration.QuickVibration();
+    }
+
+    public void OppositeVibration()
+    {
+        Vibration.OppositeVibration();
+    }
+
+
 }

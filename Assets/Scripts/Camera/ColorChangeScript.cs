@@ -14,6 +14,7 @@ public class ColorChangeScript : MonoBehaviour
     public float colorChangeSpeed;
     public bool colorChangeInMotion;
 
+
     private void Start()
     {
         referenceColor = overlayMaterial.color;
@@ -24,6 +25,7 @@ public class ColorChangeScript : MonoBehaviour
     {
         ColorLerp();
         ColorSetter();
+
     }
     void ColorLerp()
     {

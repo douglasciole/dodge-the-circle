@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579222969051884926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.12, y: 46.83, z: 0}
-  m_LocalScale: {x: 11.289999, y: 11.289999, z: 1}
+  m_LocalPosition: {x: 6.339, y: 46.809, z: 0}
+  m_LocalScale: {x: 10.939916, y: 11.050983, z: 1}
   m_Children: []
   m_Father: {fileID: 8063876406564649329}
   m_RootOrder: 0
@@ -46,6 +46,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

@@ -7,48 +7,41 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public GameObject hs_label, ls_label;
+    public float hs_value, ls_value;
     private string hs_string, ls_string;
+
+    public GameObject newBestLabel;
 
     private void Start()
     {
-        // string ls_string = HStoString(PlayerPrefs.GetFloat("Last_Score", 0));
-        ls_string = string.Format("0.00", PlayerPrefs.GetFloat("Last_Score", 0));
+        ls_value = PlayerPrefs.GetFloat("Last_Score", 0);
+        ls_string = ls_value.ToString("00.00");
         ls_label.GetComponent<Text>().text = ls_string;
         ls_label.transform.GetChild(0).GetComponent<Text>().text = ls_string;
 
-        // string hs_string = HStoString(PlayerPrefs.GetFloat("High_Score", 0));
-        hs_string = string.Format("0.00", PlayerPrefs.GetFloat("High_Score", 0));
+        hs_value = PlayerPrefs.GetFloat("High_Score", 0);
+        hs_string = hs_value.ToString("00.00");
         hs_label.GetComponent<Text>().text = hs_string;
         hs_label.transform.GetChild(0).GetComponent<Text>().text = hs_string;
-    }
 
+        if (hs_value - ls_value < .01f)
+        {
+            newBestLabel.SetActive(true);
+        }
+    }
 
     public void LoadMenu()
     {
+        Vibration.QuickVibration();
         SceneManager.LoadScene("1_MenuScene", LoadSceneMode.Single);
     }
 
-    string HStoString(float hs)
+    [ContextMenu("Erase HighScore")]
+    public void EraseHighScore()
     {
-        string hs_string;
-        switch (hs)
-        {
-            case float n when (n < 10):
-                hs_string = ("0000" + hs.ToString());
-                break;
-            case float n when (n < 100):
-                hs_string = ("000" + hs.ToString());
-                break;
-            case float n when (n < 1000):
-                hs_string = ("00" + hs.ToString());
-                break;
-            case float n when (n < 10000):
-                hs_string = ("0" + hs.ToString());
-                break;
-            default:
-                hs_string = hs.ToString();
-                break;
-        }
-        return hs_string;
+        PlayerPrefs.SetFloat("High_Score", 0);
+        PlayerPrefs.SetFloat("Last_Score", 0);
     }
+
 }
+

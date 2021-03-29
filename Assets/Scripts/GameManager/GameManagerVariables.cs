@@ -33,6 +33,7 @@ public class GameManagerVariables : MonoBehaviour
 
     void EndGameTransition()
     {
+        Vibration.LongVibration();
         float timer = this.GetComponent<RingInstantiateScript>().gameTimer;
         PlayerPrefs.SetFloat("Last_Score", timer);
         var hs = PlayerPrefs.GetFloat("High_Score", 0);
