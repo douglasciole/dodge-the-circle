@@ -5,12 +5,19 @@ using UnityEngine;
 public class RotationScript : MonoBehaviour
 {
     public bool randomInitial;
+    public bool targeted;
+    public float targetAngle;
     public float rotationSpeed;
-    // Start is called before the first frame update
+
     void Start()
     {
-        if(randomInitial){
-            this.transform.Rotate(Vector3.forward, Random.Range(-180,180));
+        if (randomInitial)
+        {
+            this.transform.Rotate(Vector3.forward, Random.Range(-180, 180));
+        }
+        if (targeted)
+        {
+            this.transform.Rotate(Vector3.forward, targetAngle);
         }
     }
 

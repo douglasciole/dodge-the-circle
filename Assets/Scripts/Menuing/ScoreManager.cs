@@ -11,6 +11,7 @@ public class ScoreManager : MonoBehaviour
     private string hs_string, ls_string;
 
     public GameObject newBestLabel;
+    public AudioSource menuSounds;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class ScoreManager : MonoBehaviour
     public void LoadMenu()
     {
         Vibration.QuickVibration();
+        menuSounds.Play();
         SceneManager.LoadScene("1_MenuScene", LoadSceneMode.Single);
     }
 

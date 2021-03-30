@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
+    public AudioSource buttonAudioSource;
+    public AudioSource gameAudioSource;
 
     private void Awake()
     {
@@ -14,17 +16,20 @@ public class TitleManager : MonoBehaviour
     public void LoadOptions()
     {
         Vibration.QuickVibration();
+        buttonAudioSource.Play();
         SceneManager.LoadScene("2_OptionsScene", LoadSceneMode.Single);
     }
 
     public void LoadGame()
     {
         Vibration.QuickVibration();
+        gameAudioSource.Play();
         SceneManager.LoadScene("G_GameScene", LoadSceneMode.Single);
     }
     public void QuitGame()
     {
         Vibration.QuickVibration();
+        buttonAudioSource.Play();
         Application.Quit();
     }
 

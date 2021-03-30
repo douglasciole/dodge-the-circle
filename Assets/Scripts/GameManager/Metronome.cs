@@ -18,7 +18,7 @@ public class Metronome : MonoBehaviour
 
     void Start()
     {
-        playingSong = GameObject.Find("AudioSource").GetComponent<AudioSource>().clip;
+        playingSong = GameObject.Find("GameAudioSource").GetComponent<AudioSource>().clip;
         songBPM = float.Parse(playingSong.name.Substring(0, 3).ToString());
         beatInterval = Mathf.Round((50 * 60) / songBPM);
         beatTempo = new bool[4] { true, false, false, false };
@@ -37,7 +37,10 @@ public class Metronome : MonoBehaviour
         if (timerCounter % beatInterval == 0)
         {
             NextTempo();
-            beatFlag = true;
+            if (beatTempo[1] == true || beatTempo[3] == true)
+            {
+                beatFlag = true;
+            }
         }
     }
 

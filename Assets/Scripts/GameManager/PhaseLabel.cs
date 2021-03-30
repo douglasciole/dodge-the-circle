@@ -18,7 +18,7 @@ public class PhaseLabel : MonoBehaviour
     {
         switch (ringScript.phase)
         {
-            case 5:
+            case 6:
                 phaseText.text = ("Lvl Max");
                 break;
             default:

@@ -6,7 +6,7 @@ public class ColorChangeScript : MonoBehaviour
 {
     public Material overlayMaterial;
     public Material spriteMaterial, spriteTrailMaterial;
-    public Material playerMaterial, playerTrailMaterial;
+    public Material playerMaterial, playerTrailMaterial, playerShieldMaterial;
     public Color referenceColor;
     public Color colorChangeTarget;
     public Color[] possibleTargets;
@@ -71,6 +71,9 @@ public class ColorChangeScript : MonoBehaviour
             trailMaterial.a = .8f;
             playerTrailMaterial.SetColor("_Color", trailMaterial);
             playerTrailMaterial.SetColor("_EmissionColor", trailMaterial * -1);
+            trailMaterial.a = .5f;
+            playerShieldMaterial.SetColor("_Color", trailMaterial);
+            playerShieldMaterial.SetColor("_EmissionColor", trailMaterial * +2);
         }
     }
 }

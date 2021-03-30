@@ -7,15 +7,16 @@ public class RingInstantiateScript : MonoBehaviour
     public float ringSpeed;
     public bool instantiateFlag;
 
-    public List<GameObject> arrayLevel_0, arrayLevel_1, arrayLevel_2, arrayLevel_3, arrayLevel_4, arrayLevel_5;
-    public GameObject ringTest;
+    public List<GameObject> arrayLevel_0, arrayLevel_1, arrayLevel_2, arrayLevel_3, arrayLevel_4, arrayLevel_5, arrayLevel_6;
+    public GameObject defaultRing;
 
     private GameObject currentInstance;
 
     public Metronome metronomeScript;
+    public GameObject player;
 
     public int phase;
-    public int maxPhase;
+    public int maxPhase, tutorialPhase;
     public float gameTimer;
     public int maxPhaseTimer;
 
@@ -29,16 +30,25 @@ public class RingInstantiateScript : MonoBehaviour
         arrayLevel_3 = PopulateInstantiateList(3);
         arrayLevel_4 = PopulateInstantiateList(4);
         arrayLevel_5 = PopulateInstantiateList(5);
+        arrayLevel_6 = PopulateInstantiateList(6);
+
+        player = GameObject.Find("Player");
     }
 
     void FixedUpdate()
     {
 
         gameTimer += Time.deltaTime;
-
-        if (phase < maxPhase)
+        if (phase == 0)
         {
-            if (gameTimer > (maxPhaseTimer / maxPhase) * (phase + 1))
+            if (gameTimer > tutorialPhase)
+            {
+                phase = 1;
+            }
+        }
+        else if (phase < maxPhase)
+        {
+            if ((gameTimer - tutorialPhase) > (maxPhaseTimer / maxPhase) * (phase))
             {
                 phase++;
             }
@@ -51,6 +61,11 @@ public class RingInstantiateScript : MonoBehaviour
             //Level selector
             GameObject tempObject = PickFromLevel(phase);
             currentInstance = GameObject.Instantiate(tempObject, Vector3.zero, Quaternion.identity);
+            //setting ring parameters
+            var currentScript = currentInstance.GetComponent<RotationScript>();
+            currentScript.targeted = true;
+            currentScript.randomInitial = false;
+            currentScript.targetAngle = player.transform.rotation.eulerAngles.z;
             instantiateFlag = false;
         }
     }
@@ -83,8 +98,12 @@ public class RingInstantiateScript : MonoBehaviour
                 {
                     return arrayLevel_5[Random.Range(0, arrayLevel_5.Count - 1)];
                 }
+            case 6:
+                {
+                    return arrayLevel_6[Random.Range(0, arrayLevel_6.Count - 1)];
+                }
             default:
-                return ringTest;
+                return defaultRing;
         }
     }
 

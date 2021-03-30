@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8150737538767710264}
   - component: {fileID: 2750819508286952482}
   - component: {fileID: 307700283235811745}
+  - component: {fileID: 107279264457420003}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Ring
@@ -93,7 +94,7 @@ PolygonCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -117,6 +118,25 @@ PolygonCollider2D:
       - {x: 0.55147374, y: -0.1153674}
       - {x: 0.55321634, y: -0.0030139151}
       - {x: 0.48853427, y: 0.05907341}
+--- !u!251 &107279264457420003
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579222969051884926}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: -9.55
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 90
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2748541319775988955
 GameObject:
   m_ObjectHideFlags: 0
