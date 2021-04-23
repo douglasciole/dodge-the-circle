@@ -76,27 +76,27 @@ public class RingInstantiateScript : MonoBehaviour
         {
             case 0:
                 {
-                    return arrayLevel_0[Random.Range(0, arrayLevel_0.Count - 1)];
+                    return arrayLevel_0[Random.Range(0, arrayLevel_0.Count)];
                 }
             case 1:
                 {
-                    return arrayLevel_1[Random.Range(0, arrayLevel_1.Count - 1)];
+                    return arrayLevel_1[Random.Range(0, arrayLevel_1.Count)];
                 }
             case 2:
                 {
-                    return arrayLevel_2[Random.Range(0, arrayLevel_2.Count - 1)];
+                    return arrayLevel_2[Random.Range(0, arrayLevel_2.Count)];
                 }
             case 3:
                 {
-                    return arrayLevel_3[Random.Range(0, arrayLevel_3.Count - 1)];
+                    return arrayLevel_3[Random.Range(0, arrayLevel_3.Count)];
                 }
             case 4:
                 {
-                    return arrayLevel_4[Random.Range(0, arrayLevel_4.Count - 1)];
+                    return arrayLevel_4[Random.Range(0, arrayLevel_4.Count)];
                 }
             case 5:
                 {
-                    return arrayLevel_5[Random.Range(0, arrayLevel_5.Count - 1)];
+                    return arrayLevel_5[Random.Range(0, arrayLevel_5.Count)];
                 }
             case 6:
                 {

@@ -681,15 +681,15 @@ MonoBehaviour:
   referenceColor: {r: 0, g: 1, b: 0.008504152, a: 1}
   colorChangeTarget: {r: 0, g: 1, b: 0.08760595, a: 1}
   possibleTargets:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.6666667, b: 0, a: 1}
-  - {r: 0.6000001, g: 0.9, b: 0, a: 1}
-  - {r: 0, g: 0.9, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0.66666675, a: 1}
-  - {r: 0, g: 0.666667, b: 1, a: 1}
-  - {r: 0.17999998, g: 0.17999998, b: 0.9, a: 1}
+  - {r: 1, g: 0.31199998, b: 0.31199998, a: 1}
+  - {r: 1, g: 0.75166667, b: 0.255, a: 1}
+  - {r: 0.7482435, g: 1, b: 0.24800003, a: 1}
+  - {r: 0.25, g: 1, b: 0.25, a: 1}
+  - {r: 0.19999999, g: 1, b: 0.7333334, a: 1}
+  - {r: 0.19999999, g: 0.7333336, b: 1, a: 1}
+  - {r: 0.19999999, g: 0.19999999, b: 1, a: 1}
   - {r: 0.7613332, g: 0.28400004, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0.6666665, a: 1}
+  - {r: 1, g: 0.19999999, b: 0.73333323, a: 1}
   colorChangeSpeed: 0.015
   colorChangeInMotion: 0
 --- !u!1 &527698485
@@ -1046,7 +1046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925104759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.02, z: -0.1}
+  m_LocalPosition: {x: 0, y: 4.02, z: -0.208}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 1695929336}
@@ -1133,6 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerVariables: {fileID: 0}
   shield: {fileID: 1695929335}
+  cooldown: 0.5
   hitSound: {fileID: 235024448}
   shieldSound: {fileID: 1979571457}
 --- !u!50 &925104764
@@ -6829,7 +6830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695929335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.099}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.1}
   m_Children: []
   m_Father: {fileID: 925104760}
