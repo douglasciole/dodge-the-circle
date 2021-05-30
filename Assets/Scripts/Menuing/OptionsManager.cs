@@ -84,5 +84,14 @@ public class OptionsManager : MonoBehaviour
         Vibration.OppositeVibration();
     }
 
+    [ContextMenu("Reset Prefs")]
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.SetFloat("Music_Volume", 1);
+        PlayerPrefs.SetFloat("Fx_Volume", 1);
+        PlayerPrefs.SetFloat("Camera_Move", .5f);
+        PlayerPrefs.SetInt("Vibr_State", 1);
+    }
+
 
 }
